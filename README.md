@@ -9,13 +9,17 @@ only modifications are this README.md.
 
 You will need a rootless jailbroken iOS environment, with the following dependencies installed via a package manager like Sileo:
 
-* `git`
 * `autoconf`
-* `clang`
-* `make`
-* `llvm`
 * `bison`
+* `clang`
 * `flex`
+* `git`
+* `libgmp10`
+* `libgmp-dev`
+* `libmpfr6`
+* `libmpfr-dev`
+* `llvm`
+* `make`
 * `texinfo`
 
 ### Compilation Steps
