@@ -21,10 +21,12 @@ You will need a rootless jailbroken iOS environment, with the following dependen
 ### Compilation Steps
 
 ```bash
+git clone https://github.com/timmy6259/binutils-gdb/
+
 mkdir -p build-mips64
 cd build-mips64
 
-../binutils-gdb/configure \
+../configure \
   --disable-gas \
   --disable-binutils \
   --disable-gprof \
