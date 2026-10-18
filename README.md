@@ -47,7 +47,7 @@ export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char 
 
 make all-ld SHELL=/var/jb/usr/bin/sh MAKEINFO=true -j\$(nproc)
 
-make install SHELL=/var/jb/susr/bin/sh
+make install SHELL=/var/jb/usr/bin/sh
 ```
 
 ## License
