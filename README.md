@@ -36,7 +36,7 @@ cd build-mips64
   --target=mips64-elf \
   --prefix=/var/jb/usr/local \
   MAKEINFO=true \
-  SHELL=/var/usr/bin/sh \
+  SHELL=/var/jb/usr/bin/sh \
   AR=llvm-ar
 
 export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined"
