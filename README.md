@@ -45,9 +45,9 @@ cd build-mips64
 
 export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined"
 
-make all-ld SHELL=/var/usr/bin/sh MAKEINFO=true -j\$(nproc)
+make all-ld SHELL=/var/jb/usr/bin/sh MAKEINFO=true -j\$(nproc)
 
-make install SHELL=/var/usr/bin/sh
+make install SHELL=/var/jb/susr/bin/sh
 ```
 
 ## License
