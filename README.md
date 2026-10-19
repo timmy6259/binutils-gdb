@@ -39,13 +39,13 @@ cd build-mips64
   --disable-werror \
   --target=mips64-elf \
   --prefix=/var/jb/usr \
-  MAKEINFO=true \
+  MAKEINFO=/var/jb/usr/bin/makeinfo \
   SHELL=/var/jb/usr/bin/sh \
   AR=llvm-ar
 
 export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined"
 
-make all-ld SHELL=/var/jb/usr/bin/sh MAKEINFO=true -j$(nproc)
+make all-ld SHELL=/var/jb/usr/bin/sh MAKEINFO=/var/jb/usr/bin/makeinfo -j$(nproc)
 
 make install SHELL=/var/jb/usr/bin/sh
 ```
