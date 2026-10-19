@@ -24,6 +24,8 @@ You will need a rootless jailbroken iOS environment, with the following dependen
 
 ### Compilation Steps
 
+You may need to use the MAKEINFO=true instead of the makeinfo due to the compatible issues.  
+
 ```bash
 git clone https://github.com/timmy6259/binutils-gdb/
 
