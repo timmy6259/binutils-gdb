@@ -1,13 +1,13 @@
 # GNU binutils-gdb
 
-This repository contains the source codes and modifications for the `mips64-elf-ld` package targeting rootless iOS.
+This repository contains the source codes and modifications for the `binutils-mips64-elf_iphonos-arm64` package targeting rootless iOS.
 
 ## Modifications
 only modifications are this README.md.
 
-## Building (mips64-elf-ld)
+## Building (binutils without gdb)
 
-You will need a rootless jailbroken iOS environment, with the following dependencies installed via a package manager like Sileo:
+You need a rootless jailbroken iOS environment, with the following dependencies installed via a package manager like Sileo:
 
 * `autoconf`
 * `bison`
@@ -24,7 +24,7 @@ You will need a rootless jailbroken iOS environment, with the following dependen
 
 ### Compilation Steps
 
-You may need to use the MAKEINFO=true instead of the makeinfo due to the compatible issues.  
+You need to use the MAKEINFO=true instead of the Actual makeinfo, because the compatible issues.  
 
 ```bash
 git clone https://github.com/timmy6259/binutils-gdb/
@@ -34,23 +34,26 @@ cd build-mips64
 
 ../configure \
   --disable-gas \
-  --disable-binutils \
-  --disable-gprof \
-  --disable-shared \
   --disable-nls \
   --disable-werror \
+  --disable-gdb \
+  --disable-libdecnumber \
+  --disable-readline \
+  --disable-sim \
   --target=mips64-elf \
   --prefix=/var/jb/usr \
-  MAKEINFO=/var/jb/usr/bin/makeinfo \
+  AR_FOR_TARGET=llvm-ar \
+  RANLIB_FOR_TARGET=llvm-ranlib \
   SHELL=/var/jb/usr/bin/sh \
-  AR=llvm-ar
+  MAKEINFO=true \
+  AR=llvm-ar \
+  AS=llvm-as
 
 export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined"
 
-make all-ld SHELL=/var/jb/usr/bin/sh MAKEINFO=/var/jb/usr/bin/makeinfo -j$(nproc)
+make all-gas all-ld all-binutils all-gprof all-gprofng all-libctf SHELL=/var/jb/usr/bin/sh MAKEINFO=true -j$(nproc)
 
-make install SHELL=/var/jb/usr/bin/sh
-```
+make install SHELL=/var/jb/usr/bin/sh MAKEINFO=true
 
 ## License
 This project is licensed under the GNU General Public License v3 (GPLv3).
