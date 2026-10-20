@@ -28,11 +28,18 @@ You need a rootless jailbroken iOS environment, with the following dependencies 
 
 You need to use the MAKEINFO=true instead of the Actual makeinfo, because the compatible issues.  
 
+first, clone this repo.
 ```bash
 git clone https://github.com/timmy6259/binutils-gdb/
-
+cd binutils-gdb
+```
+Then compile it.
+```bash
 mkdir -p build-mips64
 cd build-mips64
+
+export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined"
+
 
 ../configure \
   --disable-gas \
@@ -51,9 +58,7 @@ cd build-mips64
   AR=llvm-ar \
   AS=llvm-as
 
-export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined"
-
-make all-gas all-ld all-binutils all-gprof all-gprofng all-libctf SHELL=/var/jb/usr/bin/sh MAKEINFO=true -j$(nproc)
+make all-gas all-ld all-binutils all-gprof all-gprofng all-libctf all-libbacktrace all-etc SHELL=/var/jb/usr/bin/sh MAKEINFO=true -j$(nproc)
 
 make install SHELL=/var/jb/usr/bin/sh MAKEINFO=true
 
