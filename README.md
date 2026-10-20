@@ -43,7 +43,6 @@ export CPPFLAGS="-I/var/jb/usr/include"
 export LDFLAGS="-L/var/jb/usr/lib -Wl,-rpath,/var/jb/usr/lib"
 
 ../configure \
-  --disable-gas \
   --disable-nls \
   --disable-werror \
   --disable-gdb \
