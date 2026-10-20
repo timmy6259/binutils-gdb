@@ -14,6 +14,8 @@ You need a rootless jailbroken iOS environment, with the following dependencies 
 * `clang`
 * `flex`
 * `git`
+* `libfl2`
+* `libfl-dev`
 * `libgmp10`
 * `libgmp-dev`
 * `libmpfr6`
