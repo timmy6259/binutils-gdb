@@ -40,7 +40,6 @@ cd build-mips64
 
 export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined"
 
-
 ../configure \
   --disable-gas \
   --disable-nls \
@@ -61,6 +60,6 @@ export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char 
 make all-gas all-ld all-binutils all-gprof all-gprofng all-libctf all-libbacktrace all-etc SHELL=/var/jb/usr/bin/sh MAKEINFO=true -j$(nproc)
 
 make install SHELL=/var/jb/usr/bin/sh MAKEINFO=true
-
+```
 ## License
 This project is licensed under the GNU General Public License v3 (GPLv3).
