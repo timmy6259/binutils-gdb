@@ -38,7 +38,9 @@ Then compile it.
 mkdir -p build-mips64
 cd build-mips64
 
-export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined"
+export CFLAGS="-DYY_CURRENT_BUFFER=YY_CURRENT_BUFFER_LVALUE -DYYLDLEX_CHAR=char -Wno-error=macro-redefined -O2 -I/var/jb/usr/include"
+export CPPFLAGS="-I/var/jb/usr/include"
+export LDFLAGS="-L/var/jb/usr/lib -Wl,-rpath,/var/jb/usr/lib"
 
 ../configure \
   --disable-gas \
